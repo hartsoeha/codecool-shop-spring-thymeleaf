@@ -34,8 +34,13 @@
     <h1>Codecool Shop</h1>
 </div>
 
+
 <div class="container">
     <div class="card">
+        <tr th:each="cat : ${categories}">
+            <!-- <a th:href="@{/ + ${cat.name}}"><td th:text="${cat.name}"></td></a>  Why doesn't this stay in a single line?  Why doesn't it use the string name?-->
+            <td th:text="${cat.name}"></td>
+        </tr>
         <strong th:text="${category.name}">Category Title</strong>
     </div>
 

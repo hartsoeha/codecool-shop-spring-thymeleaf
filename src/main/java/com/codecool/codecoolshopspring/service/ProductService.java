@@ -11,7 +11,7 @@ import java.util.List;
 
 @Component
 public class ProductService{
-    private ProductDao productDao;
+    private ProductDao productDao; //dependency injection
     private ProductCategoryDao productCategoryDao;
 
     @Autowired
@@ -27,6 +27,10 @@ public class ProductService{
     public List<Product> getProductsForCategory(int categoryId){
         var category = productCategoryDao.find(categoryId);
         return productDao.getBy(category);
+    }
+
+    public List<ProductCategory> getAllProductCategories() {
+        return productCategoryDao.getAll();
     }
 
 
